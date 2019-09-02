@@ -11,3 +11,5 @@ spring:
       password:                 "xyz123"
       authentication-database:  "joska"
       database:                 "joska"
+  main:
+    allow-bean-definition-overriding: true

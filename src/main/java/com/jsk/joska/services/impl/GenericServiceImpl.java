@@ -1,4 +1,4 @@
-package main.java.com.jsk.joska.services.impl;
+package com.jsk.joska.services.impl;
 
 import com.jsk.joska.repository.GenericRepository;
 import com.jsk.joska.services.GenericService;

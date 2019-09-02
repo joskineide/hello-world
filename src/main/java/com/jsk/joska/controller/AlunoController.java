@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 
 import com.jsk.joska.services.GenericService;
-import main.java.com.jsk.joska.services.impl.GenericServiceImpl;
+import com.jsk.joska.services.impl.GenericServiceImpl;
 import com.jsk.joska.services.AlunoService;
 import com.jsk.joska.model.Aluno;
 

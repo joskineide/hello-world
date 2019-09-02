@@ -1,7 +1,7 @@
-package main.java.com.jsk.joska.services.impl;
+package com.jsk.joska.services.impl;
 
 import com.jsk.joska.services.AlunoService;
-import main.java.com.jsk.joska.services.impl.GenericServiceImpl;
+import com.jsk.joska.services.impl.GenericServiceImpl;
 import com.jsk.joska.repository.GenericRepository;
 import com.jsk.joska.repository.AlunoRepository;
 import com.jsk.joska.model.Aluno;
