@@ -1,6 +1,5 @@
 package com.jsk.joska.controller;
 
-
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -25,76 +24,63 @@ import io.swagger.annotations.ApiParam;
  * @param <U> Generic Entity ObjectId
  */
 
-public abstract class GenericController<E, U>{
+public abstract class GenericController<E, U> {
     private final GenericService<E, U> service;
 
-    GenericController(GenericService service){
+    GenericController(GenericService service) {
         this.service = service;
     }
 
     @ApiOperation(value = "create")
     @RequestMapping(method = RequestMethod.POST)
-    public E create(
-            @ApiParam(value = "entity", required = true)
-            @RequestBody E entity){
+    public E create(@ApiParam(value = "entity", required = true) @RequestBody E entity) {
         return service.create(entity);
     }
-    
+
     @ApiOperation(value = "read")
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
-    public Optional<E> read(
-            @ApiParam(value = "id", required = true)
-            @PathVariable U id){
+    public Optional<E> read(@ApiParam(value = "id", required = true) @PathVariable U id) {
         return service.read(id);
     }
 
     @ApiOperation(value = "update")
     @RequestMapping(method = RequestMethod.PUT)
-    public E update(
-            @ApiParam(value = "entity", required = true)
-            @RequestBody @Valid E entity){
+    public E update(@ApiParam(value = "entity", required = true) @RequestBody @Valid E entity) {
         return service.update(entity);
     }
 
     @ApiOperation(value = "delete")
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
-    public void delete(
-            @ApiParam(value = "id", required = true)
-            @PathVariable U id){
+    public void delete(@ApiParam(value = "id", required = true) @PathVariable U id) {
         service.deleteById(id);
     }
 
     @ApiOperation(value = "Show a pageble list of all items")
     @RequestMapping(method = RequestMethod.GET, value = "/list")
-    public Page<E> list(
-            @RequestParam(value = "pageNumber", defaultValue = "0") Integer pageNumber,
+    public Page<E> list(@RequestParam(value = "pageNumber", defaultValue = "0") Integer pageNumber,
             @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize,
             @RequestParam(value = "direction", defaultValue = "ASC") Sort.Direction direction,
-            @RequestParam(value = "orderBy", defaultValue = "id") String orderBy){
+            @RequestParam(value = "orderBy", defaultValue = "id") String orderBy) {
         return service.list(pageNumber, pageSize, direction, orderBy);
     }
 
     @ApiOperation(value = "Show a pageble list of a filter of items (like)")
     @RequestMapping(method = RequestMethod.GET, value = "/search")
-    public Page<E> search(
-            @ApiParam(value = "aluno", required = true) E entity,
+    public Page<E> search(@ApiParam(value = "aluno", required = true) E entity,
             @RequestParam(value = "pageNumber", defaultValue = "0") Integer pageNumber,
             @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize,
             @RequestParam(value = "direction", defaultValue = "ASC") Sort.Direction direction,
-            @RequestParam(value = "orderBy", defaultValue = "id") String orderBy){
+            @RequestParam(value = "orderBy", defaultValue = "id") String orderBy) {
         return service.search(entity, pageNumber, pageSize, direction, orderBy);
     }
 
     @ApiOperation(value = "Sho a pageble list of a filter of items (exact)")
     @RequestMapping(method = RequestMethod.GET, value = "/find")
-    public Page<E> find(
-        @ApiParam(value = "aluno", required = true) E entity,
-        @RequestParam(value = "pageNumber", defaultValue = "0") Integer pageNumber,
+    public Page<E> find(@ApiParam(value = "aluno", required = true) E entity,
+            @RequestParam(value = "pageNumber", defaultValue = "0") Integer pageNumber,
             @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize,
             @RequestParam(value = "direction", defaultValue = "ASC") Sort.Direction direction,
-            @RequestParam(value = "orderBy", defaultValue = "id") String orderBy){
+            @RequestParam(value = "orderBy", defaultValue = "id") String orderBy) {
         return service.find(entity, pageNumber, pageSize, direction, orderBy);
     }
 }
-
-
