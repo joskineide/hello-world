@@ -18,7 +18,11 @@ import java.util.Locale;
 @Configuration
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
+<<<<<<< HEAD
     private static final Sring UTF8_ENCODING = "UTF-8";
+=======
+    private static final String UTF8_ENCODING = "UTF-8";
+>>>>>>> master
 
     public WebConfig() {
         super();
@@ -29,6 +33,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("**/*.css", "**/*.js", "**/*.map", "*.html", "sagger-ui.html")
                 .addResourceLocations("classpath:META-INF/resources/").setCachePeriod(0);
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:META-INF/resources/webjars/");
+<<<<<<< HEAD
     }
 
     @Bean
@@ -50,6 +55,29 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Bean
+=======
+    }
+
+    @Bean
+    public CorsFilter corsFilter() {
+        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        final CorsConfiguration config = new CorsConfiguration();
+        config.setAllowCredentials(true);
+        config.addAllowedOrigin("*");
+        config.addAllowedHeader("*");
+        config.addAllowedMethod("OPTIONS");
+        config.addAllowedMethod("HEAD");
+        config.addAllowedMethod("GET");
+        config.addAllowedMethod("PUT");
+        config.addAllowedMethod("POST");
+        config.addAllowedMethod("DELETE");
+        config.addAllowedMethod("PATCH");
+        source.registerCorsConfiguration("*/**", config);
+        return (new CorsFilter(source));
+    }
+
+    @Bean
+>>>>>>> master
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageResource = new ReloadableResourceBundleMessageSource();
         messageResource.setBasename("classpath:messages");

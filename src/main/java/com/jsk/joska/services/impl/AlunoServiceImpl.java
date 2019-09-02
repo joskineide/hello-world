@@ -7,9 +7,12 @@ import com.jsk.joska.repository.AlunoRepository;
 import com.jsk.joska.model.Aluno;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+
 @Service("alunoService")
+// @Primary my be the solution
 public class AlunoServiceImpl extends GenericServiceImpl<Aluno, ObjectId> implements AlunoService{
     @Autowired
     private AlunoRepository repository;
