@@ -1,0 +1,13 @@
+server:
+  port: 9999
+  servlet:
+    context-path:   "/joska"
+spring:
+  data:
+    mongodb:
+      host:                     "localhost"
+      port:                     27017
+      username:                 "spring-boot"
+      password:                 "xyz123"
+      authentication-database:  "joska"
+      database:                 "joska"

@@ -1,0 +1,11 @@
+/home/joska/Desktop/joska/src/main/java/com/jsk/joska/controller/GenericController.java
+/home/joska/Desktop/joska/src/main/java/com/jsk/joska/services/GenericService.java
+/home/joska/Desktop/joska/src/main/java/com/jsk/joska/repository/AlunoRepository.java
+/home/joska/Desktop/joska/src/main/java/com/jsk/joska/services/impl/GenericServiceImpl.java
+/home/joska/Desktop/joska/src/main/java/com/jsk/joska/services/AlunoService.java
+/home/joska/Desktop/joska/src/main/java/com/jsk/joska/services/impl/AlunoServiceImpl.java
+/home/joska/Desktop/joska/src/main/java/com/jsk/joska/controller/AlunoController.java
+/home/joska/Desktop/joska/src/main/java/com/jsk/joska/JoskaApplication.java
+/home/joska/Desktop/joska/src/main/java/com/jsk/joska/repository/GenericRepository.java
+/home/joska/Desktop/joska/src/main/java/com/jsk/joska/model/User.java
+/home/joska/Desktop/joska/src/main/java/com/jsk/joska/model/Aluno.java
